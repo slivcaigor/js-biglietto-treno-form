@@ -5,113 +5,204 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
   <link rel="stylesheet" href="./css/master.css">
   <title>Biglietto Treno 2.0</title>
 </head>
 
 <body>
-  <div class="ticket flex">
-    <div class="left-side">
-      <div class="codes flex">
-        <div id="logo">
-          <img src="./img/2560px-Trenitalia_logo.svg.png" alt="Trenitalia logo">
-        </div>
-        <div id="qr-code">
-          <img src="./img/QR_code_for_mobile_English_Wikipedia.svg.png" alt="QR Code">
-        </div>
-        <div id="z-symbol">
-          <img src="./img/My project-1 (21).png">
-        </div>
-        <div id="number">
-          <span>AAZ 2719345</span>
-        </div>
-      </div>
-    </div>
-    <div class="center">
-      <div id="heading">
-        Biglietto treno ordinario da convalidare
-      </div>
-      <div id="subheading">
-        <div>UTILIZZABILE IL 09/11/2022</div>
-        <div>Emit 0083 Vett 0083 TRENITALIA S.P.A VALGONO LE CONDIZIONI DEL VETTORE</div>
-      </div>
-      <div id="from">
-        <div class="col1 custom-border">
-          <div class="hr flex">
-            <span>Nome</span>
-            <input id="passengerName" type="text" placeholder="Inserisci nome">
-          </div>
-        </div>
-        <div class="col2 custom-border">
-          <div class="hr flex">
-            <span>Cognome</span>
-            <input id="passengerSurname" type="text" placeholder="Inserisci cognome">
-          </div>
-        </div>
-        <div class="col3 custom-border">
-          <div class="hr">
-            <span>KM da percorrere</span>
-            <span>Fascia d'età</span>
-          </div>
-          <div>
-            <input id="distanceKm" type="text" placeholder="Inserisci KM">
-            <input id="passengerAge" type="text" placeholder="Inserisci la tua età">
-          </div>
-        </div>
-      </div>
-      <div id="address">
-        <div>VIA VERCEL</div>
-        <div>DA ESIBIRE IN CASO DI CAMBIO DATA</div>
-        <div>KM 153</div>
-      </div>
-      <div id="valid-time">
-        <div>TARIFFA 39/AS</div>
-        <div>VALE 4H DA CONVALIDA</div>
-      </div>
-      <span>TOT. BIGL. N 1</span>
 
-      <div>
-        <h1 id="pricing">
-          Inizia subito a calcolare il costo del tuo biglietto &#8594
-        </h1>
-      </div>
-
-
-      <div class="footer">
-        <span>525402533</span>
-        <span>ROMA P.S.</span>
-        <span>17216 20:19 30221-5 // NON FISCALE //</span>
-        <span>0764AAZ2719345</span>
-      </div>
-    </div>
-
-    <div class="right-side">
-      <div class="passengers">
-        <span>N. 1 PASSEGGERO</span>
-      </div>
-      <div class="class flex">
-        <div class="col">
-          <div class="hr"></div>
-        </div>
-        <div class="col">
-          <div class="hr"></div>
-        </div>
-        <div class="col">
-          <div class="hr">
-            Classe
+  <div class="ms_wrapper">
+    <div class="ms_train-ticket container">
+      <div class="row">
+        <!-- Left Ticket Column -->
+        <div class="col-3 d-flex align-items-center flex-column pt-3">
+          <!-- Company Logo -->
+          <div class="ms_company-logo pt-1">
+            <img src="./img/2560px-Trenitalia_logo.svg.png" alt="Company Logo">
           </div>
-          2
+          <!-- Scan Ticket With QR Code -->
+          <div class="ms_qr-scan py-4">
+            <img src="./img/Qr.png" alt="Ticket QR Code Scan">
+          </div>
+          <!-- Ticket Validation -->
+          <div class="ms_ticket-validation pb-4">
+            <img src="./img/Symbol.png" alt="Ticket Validation">
+          </div>
+          <!-- Ticket Number ID -->
+          <div class="ms_ticket-number-id px-3 py-1 mb-3 ">
+            AAZ <span id="ms_ticket-id">2718345</span>
+          </div>
+        </div>
+
+        <div class="col text-center">
+          <!-- First row heading title-->
+          <div class="row text-center pt-3 text-uppercase">
+            <span class="ms_title mb-3">
+              biglietto treno ordinario da convalidare
+            </span>
+          </div>
+          <!-- Second row date -->
+          <div class="row">
+            <span class="ms_valid-date text-uppercase">
+              utilizzabile entro il 10 novembre 2022
+            </span>
+          </div>
+          <!-- Third row info vettura -->
+          <div class="row mb-3">
+            <span class="ms_vettura text-uppercase">
+              Vett 0083 trenitalia s.p.a valgono le condizioni del vettore
+            </span>
+          </div>
+          <!-- Forth row passenger info -->
+          <div class="row text-center mt-3 border border-2 border-dark p-3">
+            <div class="ms_instructions fs-5 pb-3">
+              &#8595 Compila le informazioni qua sotto per proseguire &#8595
+            </div>
+            <div class="col-3">
+              <span>Nome</span>
+              <input class="text-center" placeholder="Nome" id="passengerName" type="text" oninput="heyName()">
+            </div>
+            <div class="col-3">
+              <span>Cognome</span>
+              <input class="text-center" placeholder="Cognome" id="passengerSurname" type="text" oninput="heySurname()">
+            </div>
+            <div class="col-3">
+              <span>KM da percorrere</span>
+              <input class="text-center" placeholder="KM" id="distanceKm" type="text">
+            </div>
+            <div class="col-3">
+              <span>Fascia d'età</span>
+              <input class="text-center" placeholder="Età" id="passengerAge" type="text">
+            </div>
+          </div>
+          <!-- Fifth row exchange ticket -->
+          <div class="row text-uppercase text-center border border-top-0 border-2 border-dark">
+            <div class="col-12">
+              <span>Via Vercel</span>
+            </div>
+            <div class="col-12">
+              <span>Da esibire in caso di cambio data</span>
+            </div>
+          </div>
+          <!-- Sixth row valid period -->
+          <div class="row text-uppercase text-center border border-top-0 border-2 border-dark">
+            <div class="col-12">
+              <span>tariffa 39/AS</span>
+            </div>
+            <div class="col-12">
+              <span>VALE 4H DA CONVALIDA</span>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col mt-3 fs-4">
+              <span class="ms_discount"></span>
+            </div>
+          </div>
+
+          <div class="ms_footer mt-2">
+            <span>525402533</span>
+            <span>17216 20:19 30221-5 // NON FISCALE //</span>
+            <span>0764AAZ2719345</span>
+          </div>
+        </div>
+        <!-- Right Ticket Column -->
+        <div class="col-3">
+          <div class="row">
+            <div class="col mt-5 d-flex justify-content-center">
+              <span class="ms_passengers-count border border-2 border-dark px-4 py-2 mb-3">
+                N.1 Passeggero
+              </span>
+            </div>
+          </div>
+          <div class="row text-center px-3 ms_padding">
+            <div class="col-4 border border-2 border-dark">
+              <div>
+                <span>
+                  Codice
+                </span>
+              </div>
+              <div class="ms_code-cp">
+                <span id="code">92911</span>
+              </div>
+            </div>
+            <div class="col-4 border border-end-0 border-start-0 border-2 border-dark">
+              <div>
+                <span>
+                  Carrozza
+                </span>
+              </div>
+              <div id="ms_carrozza">
+                <span id="wagon">2</span>
+              </div>
+            </div>
+            <div class="col-4 border border-2 border-dark">
+              <div>
+                <span>
+                  Classe
+                </span>
+              </div>
+              <div class="ms_class">
+                2
+              </div>
+            </div>
+          </div>
+
+          <div class="row fs-5">
+            <div class="col text-center border border-2 border-dark mx-3 my-2">
+              <span>
+                Passeggero
+              </span>
+              <div class="col fs-3">
+                <span id="ms_name-cta">
+                </span>
+                <span id="ms_surname-cta">
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col border border-2 border-dark mx-3 pb-1 text-center fs-5">
+              <div>
+                <span>
+                  Costo Biglietto
+                </span>
+              </div>
+              <div id="ms_ticket-price">
+                &euro;&euro;&euro;
+              </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <button class="primary-btn calculate mt-2 py-2 fs-5 border-0 rounded-pill text-light">Calcola</button>
+            </div>
+            <div class="row d-flex justify-content-center">
+              <button class="primary-btn cancel mt-2 py-2 fs-5 border-0 rounded-pill text-light">Annulla</button>
+            </div>
+
+
+            <div class="row">
+              <div class="col text-center">
+                P.IVA 05403151003
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="price flex">
-        <span>Costo Biglietto</span>
-        <button class="calculate">Calcola</button>
-      </div>
-      P.IVA 05403151003
     </div>
   </div>
 
+
   <script src="./js/master.js"></script>
+  <!-- Bootstrap JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
 </body>
 
 </html>

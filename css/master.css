@@ -1,3 +1,4 @@
+/* General Styling */
 * {
   margin: 0;
   padding: 0;
@@ -5,196 +6,63 @@
 }
 
 body {
-  background-color: #f9f9f9;
+  background-image: url(/img/wallpaperflare.com_wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-weight: 600;
 }
 
-.ticket {
-  width: 70%;
-  margin: 0 auto;
+img {
+  max-width: 100%;
+}
+
+.row>* {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.row {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Wrapper/Main Container */
+.ms_wrapper {
+  margin: 10vh auto;
+  width: 60%;
+  height: 500px;
+}
+
+.ms_train-ticket {
+  background-image: url(/img/pattern.svg);
   border: 3px solid black;
   border-radius: 20px;
-  height: 500px;
-  margin-top: 12%;
-  background-image: url(../img/pattern.svg);
   padding: 20px;
-  justify-content: space-between;
 }
 
-.center {
-  flex-grow: 1;
-}
-
-.left-side {
-  width: 20%;
-}
-
-.right-side {
-  width: 20%;
-  margin-left: 20px;
-}
-
-.flex {
-  display: flex;
-}
-
-.copyright {
-  transform: rotate(-0.25turn);
-  height: 250px;
-  margin-top: 100px;
-  font-size: 15px;
-}
-
-#logo img {
-  max-width: 100%;
-}
-
-#logo {
+/* Left Ticket Column */
+.ms_company-logo,
+.ms_qr-scan,
+.ms_ticket-validation {
   width: 50%;
 }
 
-#qr-code img {
-  max-width: 100%;
-  color: white;
-}
-
-#qr-code {
-  width: 60%;
-}
-
-#z-symbol img {
-  max-width: 100%;
-  color: white;
-}
-
-#z-symbol {
-  width: 50%;
-}
-
-#number {
+.ms_ticket-number-id {
   background-color: #FD5900;
-  padding: 10px 5px 0;
 }
 
-.codes {
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
+/* Middle Ticket Column */
+.col-3 input {
+  width: 90%;
 }
 
-#heading {
-  text-transform: uppercase;
-  text-align: center;
-}
-
-#subheading {
-  padding: 20px 0;
-}
-
-.custom-border {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  border-top: 2px solid black;
-}
-
-.col1 {
-  width: 15%;
-  height: 100px;
-}
-
-.col2 {
-  width: 15%;
-  height: 100px;
-}
-
-.col3 {
-  height: 100px;
-  flex-grow: 1;
-}
-
-.col3 .hr {
-  display: flex;
-  justify-content: space-around;
-}
-
-.col3 div:nth-child(2) {
-  display: flex;
-  justify-content: space-around;
-}
-
-#from {
-  display: flex;
-  gap: 20px;
-  border-bottom: 2px solid black;
-}
-
-#address,
-#valid-time {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-}
-
-#address div:nth-child(3) {
-  padding-top: 10px;
-}
-
-.hr {
-  border-bottom: 2px solid black;
-  height: 30px;
-}
-
-.passengers {
-  border: 2px solid black;
-  padding: 20px;
-}
-
-.col {
-  height: 70px;
-  margin-top: 32px;
-  width: calc(100% / 3);
-  border: 2px solid black;
-  text-align: center;
-}
-
-.class {
-  gap: 20px;
-}
-
-.price {
-  margin-top: 180px;
-  border: 2px solid black;
-  padding: 0px 20px 10px;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-button {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
+.primary-btn {
   background-color: #FD5900;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
+  width: 80%;
 }
 
-.footer {
-  text-align: center;
-  padding-top: 30px;
-}
-
-.footer span:nth-of-type(even) {
-  padding: 20px;
-}
-
-#pricing {
-  text-align: center;
-  padding-top: 40px;
-}
-
-#passengerName,
-#passengerSurname {
-  width: 50%;
+/* Right Ticket Column */
+.ms_padding {
+  padding-top: 12px;
 }
