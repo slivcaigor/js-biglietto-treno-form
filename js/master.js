@@ -1,26 +1,47 @@
-// Chiedere il nome e cognome del passeggero all'interno del input
+//Calcolo biglietto treno
+const passengerName = document.getElementById('passengerName');
+const passengerSurname = document.getElementById('passengerSurname');
+const distance = document.getElementById('distanceKm');
+const passengerAge = document.getElementById('passengerAge');
+const basePrice = "0.21";
+const calculate = document.querySelector(".calculate");
 
-// Chiedere la distanza in KM da percorrere all'interno del input
+let ticketPrice, discountUnder, discountOver, priceUnder, priceOver, message;
 
-// Chiedere l'età del passeggero all'interno del input
+calculate.addEventListener("click",
 
-// Dare l'opzione di annullare con un secondo tasto
+  function () {
 
-// Al click del tasto "Genera"
+    //Numero di KM da percorrere
+    distanceKm = distance.value;
 
-  // Avvisare di uno sconto del 20% tramite popup, se minorenne
+    //Età del passeggero
+    age = passengerAge.value;
 
-  // Avvisare di uno sconto del 40% tramite popup, se over 65
+    //Il prezzo e' definito in base ai KM (0.21€ al KM)
+    ticketPrice = basePrice * distanceKm;
 
-  // Mostrare nome passeggero 
+    // Variabili dello sconto applicato
+    discountUnder = ((ticketPrice / 100) * 20);
+    discountOver = ((ticketPrice / 100) * 40);
 
-  // Generare un numero random per Carrozza
+    // //Calcolo costo biglietto scontato
+    priceUnder = (ticketPrice - discountUnder);
+    priceOver = (ticketPrice - discountOver);
 
-  // Generare un numero random per Codice CP
+    //Alert sconto ricevuto
+    if (age < 18) {
+      alert("Hai diritto ad uno sconto del 20% ovvero: " + (discountUnder.toFixed(2)) + " €");
+      message = `Il prezzo del tuo biglietto scontato è di: ${priceUnder.toFixed(2)} €`;
 
-  // Mostrare costo biglietto con sconto applicato
+    } else if (age > 17 && age < 66) {
+      message = `Il costo del tuo biglietto è di: ${ticketPrice.toFixed(2)} €`;
 
+    } else if (age > 65) {
+      alert("Hai diritto ad uno sconto del 40% ovvero: " + (discountOver.toFixed(2)) + " €");
+      message = `Il prezzo del tuo biglietto scontato è di: ${priceOver.toFixed(2)} €`;
+    }
 
-
-
-
+    document.getElementById('pricing').innerHTML = message;
+  }
+);
