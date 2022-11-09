@@ -101,5 +101,8 @@ cancel.addEventListener("click",
 
     message = '';
     document.getElementById('ms_ticket-price').innerHTML = message;
+
+    discount = '';
+    document.querySelector('.ms_discount').innerHTML = discount;
   }
 );
