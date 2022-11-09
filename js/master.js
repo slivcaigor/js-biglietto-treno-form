@@ -8,6 +8,7 @@ const calculate = document.querySelector(".calculate");
 const cancel = document.querySelector(".cancel");
 const wagon = document.querySelector(".ms_carrozza");
 const code = document.querySelector(".ms_code-cp");
+const numberTicket = document.querySelector(".ms_ticket-number-id");
 
 let ticketPrice, discountUnder, discountOver, priceUnder, priceOver, message;
 
@@ -28,7 +29,11 @@ function heySurname() {
 calculate.addEventListener("click",
 
   function () {
-    // Genera Codice Treno Random
+    // Genera Codice Ticket Random
+    trainNumber = Math.floor(Math.random() * 9000000) + 1000000;
+    document.getElementById('ms_ticket-id').innerHTML = trainNumber;
+
+    // Genera Codice Ticket Random
     trainCode = Math.floor(Math.random() * 90000) + 10000;
     document.getElementById('code').innerHTML = trainCode;
 
@@ -89,6 +94,18 @@ cancel.addEventListener("click",
     passengerSurname.value = '';
     distance.value = '';
     passengerAge.value = '';
+
+    // Train wagon number returns default
+    trainWagon = '0';
+    document.getElementById('wagon').innerHTML = trainWagon;
+
+    // Ticket number returns default
+    trainCode = '00000';
+    document.getElementById('code').innerHTML = trainCode;
+
+    // Ticket code returns default
+    trainNumber = '0000000';
+    document.getElementById('ms_ticket-id').innerHTML = trainNumber;
 
     // clear passenger name
     var heyName = document.getElementById('passengerName').value = '';
